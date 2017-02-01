@@ -1,0 +1,26 @@
+{
+  "name": "smallcase",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "^1.4.0",
+    "angular-animate": "^1.4.0",
+    "angular-route": "^1.4.0",
+    "underscore": "^1.8.3",
+    "angular-native-dragdrop": "^1.2.1",
+    "angular-nvd3": "^1.0.8"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.4.0"
+  },
+  "appPath": "app",
+  "moduleName": "smallcaseApp",
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}

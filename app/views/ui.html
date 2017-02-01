@@ -1,0 +1,80 @@
+<div class="header">
+  <div class="container">
+    <div class="row padding-top-20">
+      <div class="header__title col-10 padding-top-6 padding-bottom-6 f-18">
+        Responsive Tab style menu UI
+      </div>
+      <div class="col-2 header__ham" ng-click="open_menu()">
+        <img ng-src="//static.gozoomo.com/web-assets/BUYER-3.0/menu.svg"/>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="menu">
+  <div class="menu__mtabs" ng-show="display_menu">
+    <div class="menu__tabs--tab container fg-grey" ng-click="select_tab($index)" id="mtab{{$index}}" ng-class="{'bg-red fg-white': ($index===1)}" ng-repeat="tab in ['Home', 'Tab 1', 'Tab 2', 'Tab 3', 'Tab 4', 'Tab 5', 'Tab 6']">
+      {{tab}}
+    </div>
+  </div>
+  <div class="container menu__tabs">
+    <div class="menu__tabs--tab" ng-click="select_tab($index)" id="tab{{$index}}" ng-class="{'bg-red fg-white': ($index===1)}" ng-repeat="tab in ['Home', 'Tab 1', 'Tab 2', 'Tab 3', 'Tab 4', 'Tab 5', 'Tab 6']">
+      {{tab}}
+    </div>
+  </div>
+</div>
+<div class="content bg-red fg-white" id="content">
+  <div class="container bg-grey-dark fg-light-grey menu__mobile" ng-hide="display_menu">
+    <div class="row padding-top-12 padding-bottom-12">
+      <div class="col-12">Tab 1</div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 fg-white">
+        <div class="f-24 margin-top-50">
+          Look at the Twitter screen above. DO you think new users understand what they are supposed to do?
+        </div>
+        <div class="f-18 margin-top-20">
+          Develop a responsive tab page. The page look and style should be exactly as it is in
+          the images attached. The PSD’s of each resolution are attached for any additional
+          help. Content used in tabs is dispensable and can be replaced by any other content.
+          The Html and Css should be optimised.
+          <br/><br/>
+          This task is to understand your approach at structuring page elements and styling/
+          animation skill set. I would suggest you to use minimum amount of javascript in this
+          one. Also avoid using any css framework like Bootstrap, Foundation etc. Feel free to
+          use your creativity for to improve interactions(eg: Menu opening and closing in
+          mobile).
+        </div>
+      </div>
+      <div class=" tab-count col-12 padding-top-40 f-18" style="color: #e45644;">
+        Tab {{active_index}}
+      </div>
+      <div class="col-12">
+        <div class="padding-top-50 social">
+          <div class="fg-white margin-bottom-20">Follow us on:</div>
+            <ul>
+              <li class="social__icons">
+                <div class="social__icons--icon bg-white">
+                  <i class="fa fa-facebook"></i>
+                </div>
+              </li>
+
+              <li class="social__icons">
+                <div class="social__icons--icon bg-white">
+                  <i class="fa fa-twitter"></i>
+                </div>
+              </li>
+
+              <li class="social__icons">
+                <div class="social__icons--icon bg-white">
+                  <i class="fa fa-google-plus"></i>
+                </div>
+              </li>
+            </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

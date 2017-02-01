@@ -1,0 +1,45 @@
+@import "http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css";
+
+@font-face {
+  font-family: 'Azo Sans';
+  src:
+    url('http://localhost:9000/Rui Abreu - AzoSans-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Azo Sans';
+  src:
+    url('http://localhost:9000/Rui Abreu - AzoSans-Medium.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Azo Sans';
+  src:
+    url('http://localhost:9000/Rui Abreu - AzoSans-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import "element";
+@import "portfolio";
+@import "responsive-ui";
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+  font-family: "Azo Sans";
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+
+/* Responsive: Portrait tablets and up */

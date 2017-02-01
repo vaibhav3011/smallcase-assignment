@@ -1,0 +1,119 @@
+//
+// Variables
+// --------------------------------------------------
+
+//== Colors
+//
+//## Black & other brand colors for use across the site.
+
+$black:                         #000 !default;
+$grey-dark:                     lighten($black, 13%) !default;      // #212121
+$grey:                          #888888 !default;      // #757575
+$grey-light:                    lighten($black, 74%) !default;      // #bdbdbd
+$grey-lighter:                  lighten($black, 88%) !default;      // #e0e0e0
+$grey-lightest:                 #fafafa;
+$silver:                        lighten($black, 90%) !default;      // #e6e6e6
+$ash:                           lighten($black, 95%) !default;      // #f2f2f2
+$ash-light:                     lighten($black, 98%) !default;      // #fafafa
+
+$blue-grey: rgba(18, 37, 79, 0.1) !default;
+$blue-grey-dark: #dadada !default;
+$blue-dark: #12254f;
+$white-one: rgba(18, 36, 79, 0.1);
+
+$blue:                          #15274d !default;
+$blue-bright:                   #1d325b !default;
+$green-dark:                    #43a047 !default;
+$green:                         #4aad52 !default;
+$green-bright:                  #9ccc65 !default;
+$beige:                         #9f7c52 !default;
+$red-dark:                      #e45644 !default;
+$red:                           #db5940 !default;
+$red-bright:                    #ef233C !default;
+$golden:                        #fdd017 !default;
+$maroon:                        #8b0000 !default;
+$purple:                        #8c2788 !default;
+$brown:                         #603813 !default;
+$yellow:                        #f8bc3b !default;
+$bronze:                        #cd7f32 !default;
+$wine:                          #cd5c5c !default;
+$violet:                        #522452 !default;
+$orange:                        #ff8b00 !default;
+$sky:                           #42afce !default;
+$cyan:                          #33bc9e !default;
+
+$brand-primary:                 $blue !default;
+$brand-action:                  $orange !default;
+$brand-link:                    $sky !default;
+$brand-good:                    $green-dark !default;
+$brand-normal:                  $yellow !default;
+$brand-warning:                 $red !default;
+$brand-inactive:                $ash !default;
+$brand-disabled:                $ash-light !default;
+
+$white:                         #fff !default;
+
+//** Global color for body text, textual links.
+$text-color:                    $grey;
+$link-color:                    $brand-link;
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+$grid-columns:                  12 !default;
+$grid-max-width:                75em !default;
+
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:             30px !default;
+$gutter:                        $grid-gutter-width !default;
+
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-font-weight:                bold !default;
+$btn-color:                      $brand-action !default;
+
+$btn-default-color:              $white !default;
+$btn-default-bg:                 $btn-color !default;
+$btn-default-border:             transparent !default;
+
+
+//== Components
+//
+//## Define common padding and border radius sizes and more. Values based on 14px text and 1.428 line-height (~20px to start).
+
+$padding-base-vertical:           10px !default;
+$padding-base-horizontal:         18px !default;
+
+$padding-large-vertical:          12px !default;
+$padding-large-horizontal:        22px !default;
+
+$padding-small-vertical:          8px !default;
+$padding-small-horizontal:        14px !default;
+
+$padding-xs-vertical:             3px !default;
+$padding-xs-horizontal:           9px !default;
+
+$line-height-large:               1.3333333 !default; // extra decimals for Win 8.1 Chrome
+$line-height-small:               1.5 !default;
+
+$border-radius-base:              3px !default;
+$border-radius-large:             4px !default;
+$border-radius-small:             2px !default;
+
+//** Width of the `border` for generating carets that indicator dropdowns.
+$caret-width-base:                4px !default;
+//** Carets increase slightly in size for larger components.
+$caret-width-large:               5px !default;
+
+
+// material timing
+$swift-out:                        cubic-bezier(0.55, 0, 0.1, 1);
+
+$spacing-vals: 0 2 4 6 8 10 12 16 18 20 24 28 32 36 40 48 50;
+$gutter-vals: 0 10 20 24 30 36 50

@@ -1,0 +1,69 @@
+<div class="container padding-top-50 padding-bottom-50">
+  <div class="row">
+    <div class="col-3" ui-on-Drop="onDropBack($event,$data)" style="margin-top: 150px;">
+      <div class="padding-10 portfolio__allstocks">
+        <div ng-repeat="stock in data.stocks | orderBy" class="padding-6 portfolio__allstocks--stock cursor-pointer"
+             ui-draggable="true" drag="stock"
+             on-drop-success="dropSuccessHandler($event,$index)">
+          <div class="half-width text-center float-left">
+            {{stock}}
+          </div>
+          <div class="half-width text-center float-left">
+            {{data.price[stock]}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-7">
+      <div class="portfolio__graph margin-bottom-20">
+        <nvd3 data="graph_data" options="options" class="with-3d-shadow with-transitions"></nvd3>
+      </div>
+      <div class="padding-10 portfolio__selectstocks" ui-on-Drop="onDrop($event,$data)">
+        <div class="padding-6 portfolio__selectstocks--stock cursor-pointer">
+          <div class="col-3">
+            Stocks
+          </div>
+          <div class="col-3">
+            Price
+          </div>
+          <div class="col-3">
+            Shares
+          </div>
+          <div class="col-3">
+            Weight
+          </div>
+        </div>
+        <div ng-repeat="stock in selectedStocks" class="padding-6 portfolio__selectstocks--stock cursor-pointer"
+             ui-draggable="true" drag="stock"
+             on-drop-success="dropSuccessHandler($event,$index)">
+          <div class="col-3">
+            {{stock.name}}
+          </div>
+          <div class="col-3">
+            {{data.price[stock.name]}}
+          </div>
+          <div class="col-3">
+            <input ng-model="stock.count" min="1" type="number" class="full-width" ng-change="change_stock_count(stock)" onkeydown="return false"/>
+          </div>
+          <div class="col-3">
+            {{compute_weight(stock) | number:2}}%
+          </div>
+        </div>
+
+        <div class="padding-6 portfolio__selectstocks--stock cursor-pointer" ng-show="data.stocks.length">
+          <div class="col-12 text-center">
+            Drop stock here
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-2 portfolio__worth padding-top-40 f-20 text-center" style="margin-top: 150px;">
+      <div>Net Worth</div>
+      <div class="margin-top-10">{{net_worth | number:0}}</div>
+      <div class="margin-top-40">Portfolio P/E</div>
+      <div class="margin-top-10">{{price_to_earnings | number : 1}}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,106 @@
+//
+// Grid system
+// --------------------------------------------------
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+.clearfix {
+  @include clearfix();
+}
+
+// Centered container element.
+@mixin container-fixed {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+  @include clearfix;
+}
+
+// Creates a wrapper for a series of columns.
+@mixin make-row {
+  margin-left: ($gutter / -2);
+  margin-right: ($gutter / -2);
+  @include clearfix;
+}
+
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+.container {
+  @include container-fixed;
+  max-width: $grid-max-width;
+}
+
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
+
+.container-fluid {
+  @include container-fixed;
+}
+
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+
+.row {
+  @include make-row;
+}
+
+
+// Columns
+//
+// Common styles for grid columns
+
+[class*='col-'] {
+  float: left;
+  padding-left: ($gutter / 2);
+  padding-right: ($gutter / 2);
+  min-height: 1px;
+}
+
+@each $i in $gutter-vals {
+
+  .row.gutter-#{$i} {
+    margin-left: #{($i / -2)}px;
+    margin-right: #{($i / -2)}px;
+
+    > [class*='col-'] {
+      padding-left: #{($i / 2)}px;
+      padding-right: #{($i / 2)}px;
+    }
+  }
+}
+
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    width: 100% / $grid-columns * $i;
+  }
+  .col-offset-#{$i} {
+    margin-left: 100% / $grid-columns * $i;
+  }
+}

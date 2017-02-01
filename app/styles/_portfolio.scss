@@ -1,0 +1,34 @@
+.portfolio {
+  &__allstocks{
+    border: 1px solid $grey-light;
+    max-height: 550px;
+    overflow-y: auto;
+
+    &--stock{
+      border: 1px solid $grey-lighter;
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+  }
+  &__graph{
+    border: 1px solid $grey-light;
+    height: 400px;
+    padding: 10px 24px 10px 10px;
+  }
+  &__selectstocks{
+    border: 1px solid $grey-light;
+    height: 400px;
+    overflow-y: auto;
+
+    &--stock{
+      border: 1px solid $grey-lighter;
+      display: flex;
+      margin-bottom: 10px;
+    }
+  }
+  &__worth{
+    border: 1px solid $grey-light;
+    height: 400px;
+  }
+}
